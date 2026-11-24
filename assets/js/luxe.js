@@ -166,7 +166,7 @@
   }
 
   /* ---------- Contadores ---------- */
-  const counters = $$('[data-count]');
+  const counters = $$('.stat [data-count]');
   const runCounter = el => {
     const end = Number(el.dataset.count), prefix = el.dataset.prefix || '';
     if (reduce) { el.textContent = prefix + end; return; }

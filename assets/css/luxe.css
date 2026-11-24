@@ -7,9 +7,10 @@
   --brand:#F4B1AE;--brand-2:#E98F95;--strong:#B8505F;--on-strong:#FFFFFF;--accent:#B0485A;
   --deep:#3A2530;--deep-rgb:58,37,48;--on-deep:#FFF0EC;--deep-muted:#E3C9CC;--deep-soft:#4C303D;
   --wm1:#E7A3A6;--wm2:#C79479;--petal:#F4B1AE;--petal-2:#FBD9D5;--shine:rgba(255,255,255,.55);
-  --serif:'Bodoni Moda','Didot','Bodoni 72','Times New Roman',serif;
+  --serif:'Cormorant Garamond','Cormorant','Georgia',serif;
+  --display:'Sacramento','Snell Roundhand','Segoe Script',cursive;
   --sans:'Jost','Helvetica Neue',Arial,sans-serif;
-  --script:'Pinyon Script','Snell Roundhand','Segoe Script',cursive;
+  --script:'Sacramento','Snell Roundhand','Segoe Script',cursive;
   --gutter:clamp(18px,4.2vw,64px);--head-h:92px;--radius:22px;--ease:cubic-bezier(.2,.8,.2,1);
   color-scheme:light;
 }
@@ -262,7 +263,7 @@ html.theme-fade *,html.theme-fade *::before,html.theme-fade *::after{transition:
 /* Texto dividido por palabras */
 .has-js [data-split]:not(.is-split){visibility:hidden;animation:unhide 0s 1.6s forwards}
 @keyframes unhide{to{visibility:visible}}
-.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.04em .06em .16em;margin:-.04em -.06em -.16em}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.22em .16em .3em;margin:-.22em -.16em -.3em}
 .w>span{display:inline-block;transform:translateY(115%) rotate(5deg);transform-origin:0 100%;transition:transform 1.05s var(--ease);transition-delay:calc(var(--wi,0)*70ms + var(--d,0ms))}
 .is-in .w>span,[data-split].is-in .w>span{transform:none}
 .hero [data-split]{--d:250ms}
@@ -746,6 +747,63 @@ html:not(.has-js) .compare-range,html:not(.has-js) .comparison-tabs{display:none
   .closing-art{width:min(66vw,300px)}
   .category-art,.price-art,.visit-art{width:min(52vw,220px)}
 }
+
+/* ============ 13. Tipografía del catálogo (v4.1) ============
+   Títulos en caligrafía fina como los de las páginas de servicios del PDF; listados en versalitas ligeras. */
+h1,h2{font-family:var(--display);font-weight:400;letter-spacing:0;line-height:1.1;text-wrap:balance}
+h3,h4{font-weight:500;letter-spacing:0}
+h1 em,h2 em{font-style:normal}
+h2{font-size:clamp(3rem,7vw,5.8rem)}
+.hero h1{font-size:clamp(4.2rem,12.5vw,10.4rem);line-height:.98;letter-spacing:0;max-width:12ch}
+.inner-hero h1{font-size:clamp(3.6rem,9.5vw,7.8rem);max-width:16ch}
+.hero h1 em{padding-inline:.04em .2em}
+.intro-copy h2{font-size:clamp(3.2rem,7vw,6rem)}
+.closing h2{font-size:clamp(3.4rem,7.4vw,6.4rem);line-height:1.05}
+.service-detail article h2{font-size:clamp(3.4rem,6.4vw,5.6rem)}
+.faq h2,.related h2,.catalog-heading h2,.price-head h2,.legal-copy h2{font-size:clamp(2.8rem,5vw,4.2rem)}
+.legal-copy h2{font-size:clamp(2.2rem,3.4vw,3rem)}
+.category-card h3,.mega-pane-head h3,.care-preview h3,.appointment-form h3,.compare-caption h3,.values h3,.steps-list h3{font-family:var(--display);font-weight:400;letter-spacing:0}
+.category-card h3{font-size:clamp(2.8rem,4.4vw,3.8rem);line-height:1}
+.mega-pane-head h3{font-size:clamp(2.8rem,4vw,3.6rem)}
+.mega-name{font-family:var(--display);font-size:2rem;line-height:1.05}
+.care-preview h3{font-size:3.2rem}.appointment-form h3{font-size:3.2rem}.compare-caption h3{font-size:2.9rem}.steps-list h3{font-size:2.5rem}
+.brand-text b{font-family:var(--display);font-size:2.1rem;font-weight:400;letter-spacing:0;line-height:.9}
+.brand-text small{margin-top:4px}
+.motion-copy{font-family:var(--display);font-style:normal;font-size:clamp(3.6rem,8.4vw,7.2rem);line-height:1}
+.motion-outline{-webkit-text-stroke:0;color:inherit;opacity:.7}
+.row-name{font:500 clamp(1.05rem,1.7vw,1.3rem)/1.3 var(--serif);text-transform:uppercase;letter-spacing:.07em}
+.service-row:hover .row-name{color:var(--accent)}
+.nav-service-link .svc-name{font:500 1rem/1.3 var(--serif);text-transform:uppercase;letter-spacing:.06em}
+.comparison-tabs button,.care-choice,.theme-name{font-family:var(--serif);font-weight:500;font-size:1.45rem}
+.faq summary{font-size:1.55rem;font-weight:500}
+.lead,.service-detail article .lead{font-weight:500}
+.slide-title span{font-size:1.9rem;font-weight:500}
+.section-bottom p,.signature-copy blockquote{font-weight:500}
+.wm-band-text .script,.stat b.script{font-size:clamp(3rem,6vw,5rem)}
+.footer-brand .script{font-size:4.4rem}
+.footer-brand-b{font-weight:500}
+.splash-inner .script{font-size:clamp(3rem,9vw,4.6rem)}
+.reel-title,.mega-shot figcaption,.nav-studio-image span,.nav-studio-links>a b{font-weight:500}
+.compare-handle>b,.motion-links a{font-weight:500}
+@media (max-width:640px){
+  .hero h1{font-size:clamp(3.8rem,19vw,5.6rem)}
+  h2{font-size:clamp(2.8rem,13vw,4rem)}
+  .brand-text b{font-size:1.8rem}
+}
+
+/* ============ 14. «Nuestra esencia» (valores) ============ */
+.values{position:relative;overflow:hidden;background:radial-gradient(900px circle at 10% 0%,color-mix(in srgb,var(--brand) 24%,var(--bg-soft)),var(--bg-soft) 60%)}
+.values-grid{gap:clamp(16px,2.4vw,32px);counter-reset:v}
+.values-grid article{position:relative;isolation:isolate;display:grid;justify-items:center;text-align:center;padding:clamp(26px,3vw,40px) clamp(20px,2.4vw,32px) clamp(30px,3vw,42px);border:0;border-radius:32px;background:var(--surface);box-shadow:0 36px 70px -44px rgba(var(--deep-rgb),.55),0 0 0 1px var(--line);transition:transform .6s var(--ease),box-shadow .6s}
+.values-grid article::before{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;padding:1.5px;background:linear-gradient(135deg,var(--brand),transparent 40%,var(--strong));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.8}
+.values-grid article:hover{transform:translateY(-12px)}
+.values-grid article:nth-child(2){margin-top:clamp(0px,3vw,44px)}
+.values-grid article .value-art{width:clamp(130px,13vw,190px);margin:-4px auto 6px;animation:sway 8s ease-in-out infinite alternate}
+.values-grid article span:not(.wm){display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--strong);color:var(--on-strong);font:500 .86rem/1 var(--sans);letter-spacing:.1em;margin-top:6px}
+.values-grid h3{margin:14px 0 8px;font-size:clamp(3rem,4vw,3.8rem);line-height:1;color:var(--accent)}
+.values-grid p{max-width:19rem;margin:0 auto;font-size:1.08rem}
+@media (max-width:980px){.values-grid article:nth-child(2){margin-top:0}}
+
 /* ============ 12. Movimiento reducido ============ */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
